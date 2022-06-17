@@ -86,7 +86,7 @@ export default class MorphOne extends Relation {
       constraints
     )
 
-    this.addEagerConstraintForMorphOne(relatedQuery, collection, query.entity)
+    this.addEagerConstraintForMorphOne(relatedQuery, collection, query.baseModel.entity)
 
     const relations = this.mapSingleRelations(relatedQuery.get(), this.id)
 
