@@ -94,7 +94,7 @@ export default class MorphMany extends Relation {
       constraints
     )
 
-    this.addEagerConstraintForMorphMany(relatedQuery, collection, query.entity)
+    this.addEagerConstraintForMorphMany(relatedQuery, collection, query.baseModel.entity)
 
     const relations = this.mapManyRelations(relatedQuery.get(), this.id)
 
