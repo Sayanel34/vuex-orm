@@ -75,7 +75,6 @@ export default class Database {
    * Register a model and a module to Database.
    */
   register(model: typeof Model, module: Module<any, any> = {}): void {
-    this.checkModelTypeMappingCapability(model)
 
     const entity: Entity = {
       name: model.entity,
