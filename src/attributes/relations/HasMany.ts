@@ -50,8 +50,9 @@ export default class HasMany extends Relation {
    * Attach the relational key to the given data.
    */
   attach(key: any, record: Record, data: NormalizedData): void {
-    key.forEach((index: any) => {
+    key.forEach((parent: any) => {
       let relatedRecord = typeof parent === 'object' ? data[parent.schema][parent.id] : data[this.related.entity][parent]
+
       if (!relatedRecord || relatedRecord[this.foreignKey] !== undefined ) return
 
       relatedRecord[this.foreignKey] = record[this.localKey]
